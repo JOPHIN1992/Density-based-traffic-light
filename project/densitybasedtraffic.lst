@@ -1,0 +1,931 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.80 build 6738 
+                                                                                               Wed Jul 10 22:29:24 2019
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 6738
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 6738"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 3 "C:\Users\JOPHIN\Documents\pic\project\densitybasedtraffic.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 3 "C:\Users\JOPHIN\Documents\pic\project\densitybasedtraffic.c"
+    45  2007  1932               	dw 0X1932 ;#
+    46                           	FNROOT	_main
+    47                           	global	_RB0
+    48                           psect	maintext,global,class=CODE,delta=2
+    49                           global __pmaintext
+    50  0701                     __pmaintext:
+    51  0030                     _RB0	set	48
+    52                           	global	_RB1
+    53  0031                     _RB1	set	49
+    54                           	global	_RB2
+    55  0032                     _RB2	set	50
+    56                           	global	_RB3
+    57  0033                     _RB3	set	51
+    58                           	global	_RB4
+    59  0034                     _RB4	set	52
+    60                           	global	_RB5
+    61  0035                     _RB5	set	53
+    62                           	global	_RB6
+    63  0036                     _RB6	set	54
+    64                           	global	_RB7
+    65  0037                     _RB7	set	55
+    66                           	global	_RC0
+    67  0038                     _RC0	set	56
+    68                           	global	_RC1
+    69  0039                     _RC1	set	57
+    70                           	global	_RC2
+    71  003A                     _RC2	set	58
+    72                           	global	_RC3
+    73  003B                     _RC3	set	59
+    74                           	global	_RD0
+    75  0040                     _RD0	set	64
+    76                           	global	_RD1
+    77  0041                     _RD1	set	65
+    78                           	global	_RD2
+    79  0042                     _RD2	set	66
+    80                           	global	_RD3
+    81  0043                     _RD3	set	67
+    82                           	global	_RD4
+    83  0044                     _RD4	set	68
+    84                           	global	_RD5
+    85  0045                     _RD5	set	69
+    86                           	global	_RD6
+    87  0046                     _RD6	set	70
+    88                           	global	_RD7
+    89  0047                     _RD7	set	71
+    90                           	global	_TRISB0
+    91  0430                     _TRISB0	set	1072
+    92                           	global	_TRISB1
+    93  0431                     _TRISB1	set	1073
+    94                           	global	_TRISB2
+    95  0432                     _TRISB2	set	1074
+    96                           	global	_TRISB3
+    97  0433                     _TRISB3	set	1075
+    98                           	global	_TRISB4
+    99  0434                     _TRISB4	set	1076
+   100                           	global	_TRISB5
+   101  0435                     _TRISB5	set	1077
+   102                           	global	_TRISB6
+   103  0436                     _TRISB6	set	1078
+   104                           	global	_TRISB7
+   105  0437                     _TRISB7	set	1079
+   106                           	global	_TRISC0
+   107  0438                     _TRISC0	set	1080
+   108                           	global	_TRISC1
+   109  0439                     _TRISC1	set	1081
+   110                           	global	_TRISC2
+   111  043A                     _TRISC2	set	1082
+   112                           	global	_TRISC3
+   113  043B                     _TRISC3	set	1083
+   114                           	global	_TRISD0
+   115  0440                     _TRISD0	set	1088
+   116                           	global	_TRISD1
+   117  0441                     _TRISD1	set	1089
+   118                           	global	_TRISD2
+   119  0442                     _TRISD2	set	1090
+   120                           	global	_TRISD3
+   121  0443                     _TRISD3	set	1091
+   122                           	global	_TRISD4
+   123  0444                     _TRISD4	set	1092
+   124                           	global	_TRISD5
+   125  0445                     _TRISD5	set	1093
+   126                           	global	_TRISD6
+   127  0446                     _TRISD6	set	1094
+   128                           	global	_TRISD7
+   129  0447                     _TRISD7	set	1095
+   130                           	file	"densitybasedtraffic.as"
+   131                           	line	#
+   132                           psect cinit,class=CODE,delta=2
+   133                           global start_initialization
+   134  06FD                     start_initialization:
+   135                           
+   136                           psect cinit,class=CODE,delta=2
+   137                           global end_of_initialization
+   138                           
+   139                           ;End of C runtime variable initialization code
+   140                           
+   141  06FD                     end_of_initialization:
+   142  06FD  0183               clrf status
+   143  06FE  120A  118A  2F01   ljmp _main	;jump to C main() function
+   144                           psect	cstackCOMMON,class=COMMON,space=1
+   145                           global __pcstackCOMMON
+   146  0070                     __pcstackCOMMON:
+   147                           	global	?_main
+   148  0070                     ?_main:	; 0 bytes @ 0x0
+   149                           	global	??_main
+   150  0070                     ??_main:	; 0 bytes @ 0x0
+   151  0070                     	ds	3
+   152 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   153 ;;Auto spaces:   Size  Autos    Used
+   154 ;; COMMON          14      3       3
+   155 ;; BANK0           80      0       0
+   156 ;; BANK1           80      0       0
+   157 ;; BANK3           96      0       0
+   158 ;; BANK2           96      0       0
+   159                           
+   160 ;;
+   161 ;; Pointer list with targets:
+   162                           
+   163                           
+   164                           
+   165 ;;
+   166 ;; Critical Paths under _main in COMMON
+   167 ;;
+   168 ;;   None.
+   169 ;;
+   170 ;; Critical Paths under _main in BANK0
+   171 ;;
+   172 ;;   None.
+   173 ;;
+   174 ;; Critical Paths under _main in BANK1
+   175 ;;
+   176 ;;   None.
+   177 ;;
+   178 ;; Critical Paths under _main in BANK3
+   179 ;;
+   180 ;;   None.
+   181 ;;
+   182 ;; Critical Paths under _main in BANK2
+   183 ;;
+   184 ;;   None.
+   185                           
+   186 ;;
+   187 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   188 ;;
+   189                           
+   190 ;;
+   191 ;;Call Graph Tables:
+   192 ;;
+   193 ;; ---------------------------------------------------------------------------------
+   194 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   195 ;; ---------------------------------------------------------------------------------
+   196 ;; (0) _main                                                 3     3      0       0
+   197 ;;                                              0 COMMON     3     3      0
+   198 ;; ---------------------------------------------------------------------------------
+   199 ;; Estimated maximum stack depth 0
+   200 ;; ---------------------------------------------------------------------------------
+   201                           
+   202 ;; Call Graph Graphs:
+   203                           
+   204 ;; _main (ROOT)
+   205 ;;
+   206                           
+   207 ;; Address spaces:
+   208                           
+   209 ;;Name               Size   Autos  Total    Cost      Usage
+   210 ;;BITCOMMON            E      0       0       0        0.0%
+   211 ;;EEDATA             100      0       0       0        0.0%
+   212 ;;NULL                 0      0       0       0        0.0%
+   213 ;;CODE                 0      0       0       0        0.0%
+   214 ;;COMMON               E      3       3       1       21.4%
+   215 ;;BITSFR0              0      0       0       1        0.0%
+   216 ;;SFR0                 0      0       0       1        0.0%
+   217 ;;BITSFR1              0      0       0       2        0.0%
+   218 ;;SFR1                 0      0       0       2        0.0%
+   219 ;;STACK                0      0       0       2        0.0%
+   220 ;;ABS                  0      0       0       3        0.0%
+   221 ;;BITBANK0            50      0       0       4        0.0%
+   222 ;;BITSFR3              0      0       0       4        0.0%
+   223 ;;SFR3                 0      0       0       4        0.0%
+   224 ;;BANK0               50      0       0       5        0.0%
+   225 ;;BITSFR2              0      0       0       5        0.0%
+   226 ;;SFR2                 0      0       0       5        0.0%
+   227 ;;BITBANK1            50      0       0       6        0.0%
+   228 ;;BANK1               50      0       0       7        0.0%
+   229 ;;BITBANK3            60      0       0       8        0.0%
+   230 ;;BANK3               60      0       0       9        0.0%
+   231 ;;BITBANK2            60      0       0      10        0.0%
+   232 ;;BANK2               60      0       0      11        0.0%
+   233 ;;DATA                 0      0       0      12        0.0%
+   234                           
+   235                           	global	_main
+   236                           psect	maintext
+   237                           
+   238 ;; *************** function _main *****************
+   239 ;; Defined at:
+   240 ;;		line 5 in file "C:\Users\JOPHIN\Documents\pic\project\densitybasedtraffic.c"
+   241 ;; Parameters:    Size  Location     Type
+   242 ;;		None
+   243 ;; Auto vars:     Size  Location     Type
+   244 ;;		None
+   245 ;; Return value:  Size  Location     Type
+   246 ;;		None               void
+   247 ;; Registers used:
+   248 ;;		wreg
+   249 ;; Tracked objects:
+   250 ;;		On entry : 17F/0
+   251 ;;		On exit  : 0/0
+   252 ;;		Unchanged: 0/0
+   253 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   254 ;;      Params:         0       0       0       0       0
+   255 ;;      Locals:         0       0       0       0       0
+   256 ;;      Temps:          3       0       0       0       0
+   257 ;;      Totals:         3       0       0       0       0
+   258 ;;Total ram usage:        3 bytes
+   259 ;; This function calls:
+   260 ;;		Nothing
+   261 ;; This function is called by:
+   262 ;;		Startup code after reset
+   263 ;; This function uses a non-reentrant model
+   264 ;;
+   265                           psect	maintext
+   266                           	file	"C:\Users\JOPHIN\Documents\pic\project\densitybasedtraffic.c"
+   267                           	line	5
+   268                           	global	__size_of_main
+   269  00FF                     	__size_of_main	equ	__end_of_main-_main
+   270                           	
+   271  0701                     _main:	
+   272                           	opt	stack 8
+   273                           ; Regs used in _main: [wreg]
+   274                           	line	6
+   275                           	
+   276  0701                     l1739:	
+   277                           ;densitybasedtraffic.c: 6: TRISB0=0;
+   278  0701  1683               	bsf	status, 5	;RP0=1, select bank1
+   279  0702  1303               	bcf	status, 6	;RP1=0, select bank1
+   280  0703  1006               	bcf	(1072/8)^080h,(1072)&7
+   281                           	line	7
+   282                           ;densitybasedtraffic.c: 7: TRISB1=0;
+   283  0704  1086               	bcf	(1073/8)^080h,(1073)&7
+   284                           	line	8
+   285                           ;densitybasedtraffic.c: 8: TRISB2=0;
+   286  0705  1106               	bcf	(1074/8)^080h,(1074)&7
+   287                           	line	9
+   288                           ;densitybasedtraffic.c: 9: TRISB3=0;
+   289  0706  1186               	bcf	(1075/8)^080h,(1075)&7
+   290                           	line	10
+   291                           ;densitybasedtraffic.c: 10: TRISB4=0;
+   292  0707  1206               	bcf	(1076/8)^080h,(1076)&7
+   293                           	line	11
+   294                           ;densitybasedtraffic.c: 11: TRISB5=0;
+   295  0708  1286               	bcf	(1077/8)^080h,(1077)&7
+   296                           	line	12
+   297                           ;densitybasedtraffic.c: 12: TRISB6=0;
+   298  0709  1306               	bcf	(1078/8)^080h,(1078)&7
+   299                           	line	13
+   300                           ;densitybasedtraffic.c: 13: TRISB7=0;
+   301  070A  1386               	bcf	(1079/8)^080h,(1079)&7
+   302                           	line	14
+   303                           ;densitybasedtraffic.c: 14: TRISC0=0;
+   304  070B  1007               	bcf	(1080/8)^080h,(1080)&7
+   305                           	line	15
+   306                           ;densitybasedtraffic.c: 15: TRISC1=0;
+   307  070C  1087               	bcf	(1081/8)^080h,(1081)&7
+   308                           	line	16
+   309                           ;densitybasedtraffic.c: 16: TRISC2=0;
+   310  070D  1107               	bcf	(1082/8)^080h,(1082)&7
+   311                           	line	17
+   312                           ;densitybasedtraffic.c: 17: TRISC3=0;
+   313  070E  1187               	bcf	(1083/8)^080h,(1083)&7
+   314                           	line	18
+   315                           ;densitybasedtraffic.c: 18: TRISD0=1;
+   316  070F  1408               	bsf	(1088/8)^080h,(1088)&7
+   317                           	line	19
+   318                           ;densitybasedtraffic.c: 19: TRISD1=1;
+   319  0710  1488               	bsf	(1089/8)^080h,(1089)&7
+   320                           	line	20
+   321                           ;densitybasedtraffic.c: 20: TRISD2=1;
+   322  0711  1508               	bsf	(1090/8)^080h,(1090)&7
+   323                           	line	21
+   324                           ;densitybasedtraffic.c: 21: TRISD3=1;
+   325  0712  1588               	bsf	(1091/8)^080h,(1091)&7
+   326                           	line	22
+   327                           ;densitybasedtraffic.c: 22: TRISD4=1;
+   328  0713  1608               	bsf	(1092/8)^080h,(1092)&7
+   329                           	line	23
+   330                           ;densitybasedtraffic.c: 23: TRISD5=1;
+   331  0714  1688               	bsf	(1093/8)^080h,(1093)&7
+   332                           	line	24
+   333                           ;densitybasedtraffic.c: 24: TRISD6=1;
+   334  0715  1708               	bsf	(1094/8)^080h,(1094)&7
+   335                           	line	25
+   336                           ;densitybasedtraffic.c: 25: TRISD7=1;
+   337  0716  1788               	bsf	(1095/8)^080h,(1095)&7
+   338                           	line	26
+   339                           ;densitybasedtraffic.c: 26: while(1)
+   340                           	
+   341  0717                     l561:	
+   342                           	line	27
+   343                           ;densitybasedtraffic.c: 27: { if(RD0==1)
+   344  0717  1283               	bcf	status, 5	;RP0=0, select bank0
+   345  0718  1303               	bcf	status, 6	;RP1=0, select bank0
+   346  0719  1C08               	btfss	(64/8),(64)&7
+   347  071A  2F1C               	goto	u2141
+   348  071B  2F1D               	goto	u2140
+   349  071C                     u2141:
+   350  071C  2F1F               	goto	l562
+   351  071D                     u2140:
+   352  071D  2F61               	goto	l563
+   353                           	line	28
+   354                           	
+   355  071E                     l1741:	
+   356                           ;densitybasedtraffic.c: 28: goto first;
+   357  071E  2F61               	goto	l563
+   358                           	
+   359  071F                     l562:	
+   360                           	line	29
+   361                           ;densitybasedtraffic.c: 29: if(RD1 ==1)
+   362  071F  1C88               	btfss	(65/8),(65)&7
+   363  0720  2F22               	goto	u2151
+   364  0721  2F23               	goto	u2150
+   365  0722                     u2151:
+   366  0722  2F25               	goto	l564
+   367  0723                     u2150:
+   368  0723  2F87               	goto	l1767
+   369                           	line	30
+   370                           	
+   371  0724                     l1743:	
+   372                           ;densitybasedtraffic.c: 30: goto second;
+   373  0724  2F87               	goto	l1767
+   374                           	
+   375  0725                     l564:	
+   376                           	line	31
+   377                           ;densitybasedtraffic.c: 31: if((RD4 && RD5)==1)
+   378  0725  1E08               	btfss	(68/8),(68)&7
+   379  0726  2F28               	goto	u2161
+   380  0727  2F29               	goto	u2160
+   381  0728                     u2161:
+   382  0728  2F2F               	goto	l566
+   383  0729                     u2160:
+   384                           	
+   385  0729                     l1745:	
+   386  0729  1E88               	btfss	(69/8),(69)&7
+   387  072A  2F2C               	goto	u2171
+   388  072B  2F2D               	goto	u2170
+   389  072C                     u2171:
+   390  072C  2F2F               	goto	l566
+   391  072D                     u2170:
+   392  072D  2FAE               	goto	l1783
+   393                           	line	32
+   394                           	
+   395  072E                     l1747:	
+   396                           ;densitybasedtraffic.c: 32: goto third;
+   397  072E  2FAE               	goto	l1783
+   398                           	
+   399  072F                     l566:	
+   400                           	line	33
+   401                           ;densitybasedtraffic.c: 33: if((RD6 && RD7)==1)
+   402  072F  1F08               	btfss	(70/8),(70)&7
+   403  0730  2F32               	goto	u2181
+   404  0731  2F33               	goto	u2180
+   405  0732                     u2181:
+   406  0732  2F39               	goto	l568
+   407  0733                     u2180:
+   408                           	
+   409  0733                     l1749:	
+   410  0733  1F88               	btfss	(71/8),(71)&7
+   411  0734  2F36               	goto	u2191
+   412  0735  2F37               	goto	u2190
+   413  0736                     u2191:
+   414  0736  2F39               	goto	l568
+   415  0737                     u2190:
+   416  0737  2FD5               	goto	l1799
+   417                           	line	34
+   418                           	
+   419  0738                     l1751:	
+   420                           ;densitybasedtraffic.c: 34: goto fourth;
+   421  0738  2FD5               	goto	l1799
+   422                           	
+   423  0739                     l568:	
+   424                           	line	35
+   425                           ;densitybasedtraffic.c: 35: if((RD0 || RD1)==1)
+   426  0739  1808               	btfsc	(64/8),(64)&7
+   427  073A  2F3C               	goto	u2201
+   428  073B  2F3D               	goto	u2200
+   429  073C                     u2201:
+   430  073C  2F61               	goto	l563
+   431  073D                     u2200:
+   432                           	
+   433  073D                     l1753:	
+   434  073D  1C88               	btfss	(65/8),(65)&7
+   435  073E  2F40               	goto	u2211
+   436  073F  2F41               	goto	u2210
+   437  0740                     u2211:
+   438  0740  2F43               	goto	l570
+   439  0741                     u2210:
+   440  0741  2F61               	goto	l563
+   441                           	
+   442  0742                     l572:	
+   443                           	line	36
+   444                           ;densitybasedtraffic.c: 36: goto first;
+   445  0742  2F61               	goto	l563
+   446                           	
+   447  0743                     l570:	
+   448                           	line	37
+   449                           ;densitybasedtraffic.c: 37: if((RD2 || RD3)==1)
+   450  0743  1908               	btfsc	(66/8),(66)&7
+   451  0744  2F46               	goto	u2221
+   452  0745  2F47               	goto	u2220
+   453  0746                     u2221:
+   454  0746  2F87               	goto	l1767
+   455  0747                     u2220:
+   456                           	
+   457  0747                     l1755:	
+   458  0747  1D88               	btfss	(67/8),(67)&7
+   459  0748  2F4A               	goto	u2231
+   460  0749  2F4B               	goto	u2230
+   461  074A                     u2231:
+   462  074A  2F4D               	goto	l573
+   463  074B                     u2230:
+   464  074B  2F87               	goto	l1767
+   465                           	
+   466  074C                     l575:	
+   467                           	line	38
+   468                           ;densitybasedtraffic.c: 38: goto second;
+   469  074C  2F87               	goto	l1767
+   470                           	
+   471  074D                     l573:	
+   472                           	line	39
+   473                           ;densitybasedtraffic.c: 39: if((RD4 || RD5)==1)
+   474  074D  1A08               	btfsc	(68/8),(68)&7
+   475  074E  2F50               	goto	u2241
+   476  074F  2F51               	goto	u2240
+   477  0750                     u2241:
+   478  0750  2FAE               	goto	l1783
+   479  0751                     u2240:
+   480                           	
+   481  0751                     l1757:	
+   482  0751  1E88               	btfss	(69/8),(69)&7
+   483  0752  2F54               	goto	u2251
+   484  0753  2F55               	goto	u2250
+   485  0754                     u2251:
+   486  0754  2F57               	goto	l576
+   487  0755                     u2250:
+   488  0755  2FAE               	goto	l1783
+   489                           	
+   490  0756                     l578:	
+   491                           	line	40
+   492                           ;densitybasedtraffic.c: 40: goto third;
+   493  0756  2FAE               	goto	l1783
+   494                           	
+   495  0757                     l576:	
+   496                           	line	41
+   497                           ;densitybasedtraffic.c: 41: if((RD6 || RD7)==1)
+   498  0757  1B08               	btfsc	(70/8),(70)&7
+   499  0758  2F5A               	goto	u2261
+   500  0759  2F5B               	goto	u2260
+   501  075A                     u2261:
+   502  075A  2FD5               	goto	l1799
+   503  075B                     u2260:
+   504                           	
+   505  075B                     l1759:	
+   506  075B  1F88               	btfss	(71/8),(71)&7
+   507  075C  2F5E               	goto	u2271
+   508  075D  2F5F               	goto	u2270
+   509  075E                     u2271:
+   510  075E  2F61               	goto	l563
+   511  075F                     u2270:
+   512  075F  2FD5               	goto	l1799
+   513                           	
+   514  0760                     l581:	
+   515                           	line	42
+   516                           ;densitybasedtraffic.c: 42: goto fourth;
+   517  0760  2FD5               	goto	l1799
+   518                           	
+   519  0761                     l579:	
+   520                           	line	43
+   521                           ;densitybasedtraffic.c: 43: first:
+   522                           	
+   523  0761                     l563:	
+   524                           	line	44
+   525                           ;densitybasedtraffic.c: 44: RC2=0;
+   526  0761  1107               	bcf	(58/8),(58)&7
+   527                           	line	45
+   528                           ;densitybasedtraffic.c: 45: RB4=0;
+   529  0762  1206               	bcf	(52/8),(52)&7
+   530                           	line	46
+   531                           ;densitybasedtraffic.c: 46: RB0=1;
+   532  0763  1406               	bsf	(48/8),(48)&7
+   533                           	line	47
+   534                           ;densitybasedtraffic.c: 47: RB2=0;
+   535  0764  1106               	bcf	(50/8),(50)&7
+   536                           	line	48
+   537                           ;densitybasedtraffic.c: 48: RB5=1;
+   538  0765  1686               	bsf	(53/8),(53)&7
+   539                           	line	49
+   540                           ;densitybasedtraffic.c: 49: RC0=1;
+   541  0766  1407               	bsf	(56/8),(56)&7
+   542                           	line	50
+   543                           ;densitybasedtraffic.c: 50: RC3=1;
+   544  0767  1587               	bsf	(59/8),(59)&7
+   545                           	line	51
+   546                           	
+   547  0768                     l1761:	
+   548                           ;densitybasedtraffic.c: 51: _delay((unsigned long)((1000)*(16000000/4000.0)));
+   549                           	opt asmopt_off
+   550  0768  3015               movlw  21
+   551  0769  00F2               movwf	((??_main+0)+0+2),f
+   552  076A  3037               movlw	55
+   553  076B  00F1               movwf	((??_main+0)+0+1),f
+   554  076C  30CA               	movlw	202
+   555  076D  00F0               movwf	((??_main+0)+0),f
+   556  076E                     u2287:
+   557  076E  0BF0               	decfsz	((??_main+0)+0),f
+   558  076F  2F6E               	goto	u2287
+   559  0770  0BF1               	decfsz	((??_main+0)+0+1),f
+   560  0771  2F6E               	goto	u2287
+   561  0772  0BF2               	decfsz	((??_main+0)+0+2),f
+   562  0773  2F6E               	goto	u2287
+   563  0774  2F75               	nop2
+   564                           opt asmopt_on
+   565                           
+   566                           	line	52
+   567                           	
+   568  0775                     l1763:	
+   569                           ;densitybasedtraffic.c: 52: RB0=0;
+   570  0775  1283               	bcf	status, 5	;RP0=0, select bank0
+   571  0776  1303               	bcf	status, 6	;RP1=0, select bank0
+   572  0777  1006               	bcf	(48/8),(48)&7
+   573                           	line	53
+   574                           	
+   575  0778                     l1765:	
+   576                           ;densitybasedtraffic.c: 53: RB1=1;
+   577  0778  1486               	bsf	(49/8),(49)&7
+   578                           	line	54
+   579                           ;densitybasedtraffic.c: 54: _delay((unsigned long)((500)*(16000000/4000.0)));
+   580                           	opt asmopt_off
+   581  0779  300B               movlw  11
+   582  077A  00F2               movwf	((??_main+0)+0+2),f
+   583  077B  301C               movlw	28
+   584  077C  00F1               movwf	((??_main+0)+0+1),f
+   585  077D  3063               	movlw	99
+   586  077E  00F0               movwf	((??_main+0)+0),f
+   587  077F                     u2297:
+   588  077F  0BF0               	decfsz	((??_main+0)+0),f
+   589  0780  2F7F               	goto	u2297
+   590  0781  0BF1               	decfsz	((??_main+0)+0+1),f
+   591  0782  2F7F               	goto	u2297
+   592  0783  0BF2               	decfsz	((??_main+0)+0+2),f
+   593  0784  2F7F               	goto	u2297
+   594  0785  0064               	clrwdt
+   595                           opt asmopt_on
+   596                           
+   597  0786  2F87               	goto	l1767
+   598                           	line	55
+   599                           ;densitybasedtraffic.c: 55: second:
+   600                           	
+   601  0787                     l565:	
+   602                           	line	56
+   603                           	
+   604  0787                     l1767:	
+   605                           ;densitybasedtraffic.c: 56: RB1=0;
+   606  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   607  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   608  0789  1086               	bcf	(49/8),(49)&7
+   609                           	line	57
+   610                           	
+   611  078A                     l1769:	
+   612                           ;densitybasedtraffic.c: 57: RB2=1;
+   613  078A  1506               	bsf	(50/8),(50)&7
+   614                           	line	58
+   615                           	
+   616  078B                     l1771:	
+   617                           ;densitybasedtraffic.c: 58: RB3=1;
+   618  078B  1586               	bsf	(51/8),(51)&7
+   619                           	line	59
+   620                           	
+   621  078C                     l1773:	
+   622                           ;densitybasedtraffic.c: 59: RB5=0;
+   623  078C  1286               	bcf	(53/8),(53)&7
+   624                           	line	60
+   625                           	
+   626  078D                     l1775:	
+   627                           ;densitybasedtraffic.c: 60: RC0=1;
+   628  078D  1407               	bsf	(56/8),(56)&7
+   629                           	line	61
+   630                           	
+   631  078E                     l1777:	
+   632                           ;densitybasedtraffic.c: 61: RC3=1;
+   633  078E  1587               	bsf	(59/8),(59)&7
+   634                           	line	62
+   635                           ;densitybasedtraffic.c: 62: _delay((unsigned long)((1000)*(16000000/4000.0)));
+   636                           	opt asmopt_off
+   637  078F  3015               movlw  21
+   638  0790  00F2               movwf	((??_main+0)+0+2),f
+   639  0791  3037               movlw	55
+   640  0792  00F1               movwf	((??_main+0)+0+1),f
+   641  0793  30CA               	movlw	202
+   642  0794  00F0               movwf	((??_main+0)+0),f
+   643  0795                     u2307:
+   644  0795  0BF0               	decfsz	((??_main+0)+0),f
+   645  0796  2F95               	goto	u2307
+   646  0797  0BF1               	decfsz	((??_main+0)+0+1),f
+   647  0798  2F95               	goto	u2307
+   648  0799  0BF2               	decfsz	((??_main+0)+0+2),f
+   649  079A  2F95               	goto	u2307
+   650  079B  2F9C               	nop2
+   651                           opt asmopt_on
+   652                           
+   653                           	line	63
+   654                           	
+   655  079C                     l1779:	
+   656                           ;densitybasedtraffic.c: 63: RB3=0;
+   657  079C  1283               	bcf	status, 5	;RP0=0, select bank0
+   658  079D  1303               	bcf	status, 6	;RP1=0, select bank0
+   659  079E  1186               	bcf	(51/8),(51)&7
+   660                           	line	64
+   661                           	
+   662  079F                     l1781:	
+   663                           ;densitybasedtraffic.c: 64: RB4=1;
+   664  079F  1606               	bsf	(52/8),(52)&7
+   665                           	line	65
+   666                           ;densitybasedtraffic.c: 65: _delay((unsigned long)((500)*(16000000/4000.0)));
+   667                           	opt asmopt_off
+   668  07A0  300B               movlw  11
+   669  07A1  00F2               movwf	((??_main+0)+0+2),f
+   670  07A2  301C               movlw	28
+   671  07A3  00F1               movwf	((??_main+0)+0+1),f
+   672  07A4  3063               	movlw	99
+   673  07A5  00F0               movwf	((??_main+0)+0),f
+   674  07A6                     u2317:
+   675  07A6  0BF0               	decfsz	((??_main+0)+0),f
+   676  07A7  2FA6               	goto	u2317
+   677  07A8  0BF1               	decfsz	((??_main+0)+0+1),f
+   678  07A9  2FA6               	goto	u2317
+   679  07AA  0BF2               	decfsz	((??_main+0)+0+2),f
+   680  07AB  2FA6               	goto	u2317
+   681  07AC  0064               	clrwdt
+   682                           opt asmopt_on
+   683                           
+   684  07AD  2FAE               	goto	l1783
+   685                           	line	66
+   686                           ;densitybasedtraffic.c: 66: third:
+   687                           	
+   688  07AE                     l567:	
+   689                           	line	67
+   690                           	
+   691  07AE                     l1783:	
+   692                           ;densitybasedtraffic.c: 67: RB2=1;
+   693  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+   694  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+   695  07B0  1506               	bsf	(50/8),(50)&7
+   696                           	line	68
+   697                           	
+   698  07B1                     l1785:	
+   699                           ;densitybasedtraffic.c: 68: RB4=0;
+   700  07B1  1206               	bcf	(52/8),(52)&7
+   701                           	line	69
+   702                           	
+   703  07B2                     l1787:	
+   704                           ;densitybasedtraffic.c: 69: RB5=1;
+   705  07B2  1686               	bsf	(53/8),(53)&7
+   706                           	line	70
+   707                           	
+   708  07B3                     l1789:	
+   709                           ;densitybasedtraffic.c: 70: RB6=1;
+   710  07B3  1706               	bsf	(54/8),(54)&7
+   711                           	line	71
+   712                           	
+   713  07B4                     l1791:	
+   714                           ;densitybasedtraffic.c: 71: RC0=0;
+   715  07B4  1007               	bcf	(56/8),(56)&7
+   716                           	line	72
+   717                           	
+   718  07B5                     l1793:	
+   719                           ;densitybasedtraffic.c: 72: RC3=1;
+   720  07B5  1587               	bsf	(59/8),(59)&7
+   721                           	line	73
+   722                           ;densitybasedtraffic.c: 73: _delay((unsigned long)((1000)*(16000000/4000.0)));
+   723                           	opt asmopt_off
+   724  07B6  3015               movlw  21
+   725  07B7  00F2               movwf	((??_main+0)+0+2),f
+   726  07B8  3037               movlw	55
+   727  07B9  00F1               movwf	((??_main+0)+0+1),f
+   728  07BA  30CA               	movlw	202
+   729  07BB  00F0               movwf	((??_main+0)+0),f
+   730  07BC                     u2327:
+   731  07BC  0BF0               	decfsz	((??_main+0)+0),f
+   732  07BD  2FBC               	goto	u2327
+   733  07BE  0BF1               	decfsz	((??_main+0)+0+1),f
+   734  07BF  2FBC               	goto	u2327
+   735  07C0  0BF2               	decfsz	((??_main+0)+0+2),f
+   736  07C1  2FBC               	goto	u2327
+   737  07C2  2FC3               	nop2
+   738                           opt asmopt_on
+   739                           
+   740                           	line	74
+   741                           	
+   742  07C3                     l1795:	
+   743                           ;densitybasedtraffic.c: 74: RB6=0;
+   744  07C3  1283               	bcf	status, 5	;RP0=0, select bank0
+   745  07C4  1303               	bcf	status, 6	;RP1=0, select bank0
+   746  07C5  1306               	bcf	(54/8),(54)&7
+   747                           	line	75
+   748                           	
+   749  07C6                     l1797:	
+   750                           ;densitybasedtraffic.c: 75: RB7=1;
+   751  07C6  1786               	bsf	(55/8),(55)&7
+   752                           	line	76
+   753                           ;densitybasedtraffic.c: 76: _delay((unsigned long)((500)*(16000000/4000.0)));
+   754                           	opt asmopt_off
+   755  07C7  300B               movlw  11
+   756  07C8  00F2               movwf	((??_main+0)+0+2),f
+   757  07C9  301C               movlw	28
+   758  07CA  00F1               movwf	((??_main+0)+0+1),f
+   759  07CB  3063               	movlw	99
+   760  07CC  00F0               movwf	((??_main+0)+0),f
+   761  07CD                     u2337:
+   762  07CD  0BF0               	decfsz	((??_main+0)+0),f
+   763  07CE  2FCD               	goto	u2337
+   764  07CF  0BF1               	decfsz	((??_main+0)+0+1),f
+   765  07D0  2FCD               	goto	u2337
+   766  07D1  0BF2               	decfsz	((??_main+0)+0+2),f
+   767  07D2  2FCD               	goto	u2337
+   768  07D3  0064               	clrwdt
+   769                           opt asmopt_on
+   770                           
+   771  07D4  2FD5               	goto	l1799
+   772                           	line	77
+   773                           ;densitybasedtraffic.c: 77: fourth:
+   774                           	
+   775  07D5                     l569:	
+   776                           	line	78
+   777                           	
+   778  07D5                     l1799:	
+   779                           ;densitybasedtraffic.c: 78: RB2=1;
+   780  07D5  1283               	bcf	status, 5	;RP0=0, select bank0
+   781  07D6  1303               	bcf	status, 6	;RP1=0, select bank0
+   782  07D7  1506               	bsf	(50/8),(50)&7
+   783                           	line	79
+   784                           	
+   785  07D8                     l1801:	
+   786                           ;densitybasedtraffic.c: 79: RB5=1;
+   787  07D8  1686               	bsf	(53/8),(53)&7
+   788                           	line	80
+   789                           	
+   790  07D9                     l1803:	
+   791                           ;densitybasedtraffic.c: 80: RB7=0;
+   792  07D9  1386               	bcf	(55/8),(55)&7
+   793                           	line	81
+   794                           	
+   795  07DA                     l1805:	
+   796                           ;densitybasedtraffic.c: 81: RC0=1;
+   797  07DA  1407               	bsf	(56/8),(56)&7
+   798                           	line	82
+   799                           	
+   800  07DB                     l1807:	
+   801                           ;densitybasedtraffic.c: 82: RC1=1;
+   802  07DB  1487               	bsf	(57/8),(57)&7
+   803                           	line	83
+   804                           	
+   805  07DC                     l1809:	
+   806                           ;densitybasedtraffic.c: 83: RC3=0;
+   807  07DC  1187               	bcf	(59/8),(59)&7
+   808                           	line	84
+   809                           ;densitybasedtraffic.c: 84: _delay((unsigned long)((1000)*(16000000/4000.0)));
+   810                           	opt asmopt_off
+   811  07DD  3015               movlw  21
+   812  07DE  00F2               movwf	((??_main+0)+0+2),f
+   813  07DF  3037               movlw	55
+   814  07E0  00F1               movwf	((??_main+0)+0+1),f
+   815  07E1  30CA               	movlw	202
+   816  07E2  00F0               movwf	((??_main+0)+0),f
+   817  07E3                     u2347:
+   818  07E3  0BF0               	decfsz	((??_main+0)+0),f
+   819  07E4  2FE3               	goto	u2347
+   820  07E5  0BF1               	decfsz	((??_main+0)+0+1),f
+   821  07E6  2FE3               	goto	u2347
+   822  07E7  0BF2               	decfsz	((??_main+0)+0+2),f
+   823  07E8  2FE3               	goto	u2347
+   824  07E9  2FEA               	nop2
+   825                           opt asmopt_on
+   826                           
+   827                           	line	85
+   828                           	
+   829  07EA                     l1811:	
+   830                           ;densitybasedtraffic.c: 85: RC1=0;
+   831  07EA  1283               	bcf	status, 5	;RP0=0, select bank0
+   832  07EB  1303               	bcf	status, 6	;RP1=0, select bank0
+   833  07EC  1087               	bcf	(57/8),(57)&7
+   834                           	line	86
+   835                           	
+   836  07ED                     l1813:	
+   837                           ;densitybasedtraffic.c: 86: RC2=1;
+   838  07ED  1507               	bsf	(58/8),(58)&7
+   839                           	line	87
+   840                           ;densitybasedtraffic.c: 87: _delay((unsigned long)((500)*(16000000/4000.0)));
+   841                           	opt asmopt_off
+   842  07EE  300B               movlw  11
+   843  07EF  00F2               movwf	((??_main+0)+0+2),f
+   844  07F0  301C               movlw	28
+   845  07F1  00F1               movwf	((??_main+0)+0+1),f
+   846  07F2  3063               	movlw	99
+   847  07F3  00F0               movwf	((??_main+0)+0),f
+   848  07F4                     u2357:
+   849  07F4  0BF0               	decfsz	((??_main+0)+0),f
+   850  07F5  2FF4               	goto	u2357
+   851  07F6  0BF1               	decfsz	((??_main+0)+0+1),f
+   852  07F7  2FF4               	goto	u2357
+   853  07F8  0BF2               	decfsz	((??_main+0)+0+2),f
+   854  07F9  2FF4               	goto	u2357
+   855  07FA  0064               	clrwdt
+   856                           opt asmopt_on
+   857                           
+   858  07FB  2F17               	goto	l561
+   859                           	line	88
+   860                           	
+   861  07FC                     l582:	
+   862                           	line	26
+   863  07FC  2F17               	goto	l561
+   864                           	
+   865  07FD                     l583:	
+   866                           	line	89
+   867                           	
+   868  07FD                     l584:	
+   869                           	global	start
+   870  07FD  120A  118A  2800   	ljmp	start
+   871                           	opt stack 0
+   872                           GLOBAL	__end_of_main
+   873  0800                     	__end_of_main:
+   874 ;; =============== function _main ends ============
+   875                           
+   876                           	signat	_main,88
+   877                           psect	maintext
+   878                           	global	btemp
+   879  007E                     	btemp set 07Eh
+   880                           
+   881                           	DABS	1,126,2	;btemp
+   882                           	global	wtemp0
+   883  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.80 build 6738 
+Symbol Table                                                                                   Wed Jul 10 22:29:24 2019
+
+                 l561 0717                   l570 0743                   l562 071F                   l563 0761  
+                 l572 0742                   l564 0725                   l565 0787                   l581 0760  
+                 l573 074D                   l582 07FC                   l566 072F                   l583 07FD  
+                 l567 07AE                   l575 074C                   l584 07FD                   l576 0757  
+                 l568 0739                   l569 07D5                   l578 0756                   l579 0761  
+                 _RB0 0030                   _RB1 0031                   _RC0 0038                   _RB2 0032  
+                 _RC1 0039                   _RB3 0033                   _RD0 0040                   _RC2 003A  
+                 _RB4 0034                   _RD1 0041                   _RC3 003B                   _RB5 0035  
+                 _RD2 0042                   _RB6 0036                   _RD3 0043                   _RB7 0037  
+                 _RD4 0044                   _RD5 0045                   _RD6 0046                   _RD7 0047  
+                l1801 07D8                  l1811 07EA                  l1803 07D9                  l1813 07ED  
+                l1805 07DA                  l1741 071E                  l1807 07DB                  l1751 0738  
+                l1743 0724                  l1809 07DC                  l1761 0768                  l1753 073D  
+                l1745 0729                  l1771 078B                  l1763 0775                  l1755 0747  
+                l1747 072E                  l1739 0701                  l1781 079F                  l1773 078C  
+                l1765 0778                  l1757 0751                  l1749 0733                  l1791 07B4  
+                l1775 078D                  l1759 075B                  l1783 07AE                  l1767 0787  
+                l1793 07B5                  l1785 07B1                  l1777 078E                  l1769 078A  
+                l1795 07C3                  l1787 07B2                  l1779 079C                  l1797 07C6  
+                l1789 07B3                  l1799 07D5                  u2200 073D                  u2201 073C  
+                u2210 0741                  u2211 0740                  u2220 0747                  u2140 071D  
+                u2221 0746                  u2141 071C                  u2230 074B                  u2150 0723  
+                u2231 074A                  u2151 0722                  u2240 0751                  u2160 0729  
+                u2241 0750                  u2161 0728                  u2250 0755                  u2170 072D  
+                u2307 0795                  u2251 0754                  u2171 072C                  u2260 075B  
+                u2180 0733                  u2317 07A6                  u2261 075A                  u2181 0732  
+                u2270 075F                  u2190 0737                  u2327 07BC                  u2271 075E  
+                u2191 0736                  u2337 07CD                  u2347 07E3                  u2357 07F4  
+                u2287 076E                  u2297 077F                  _main 0701                  btemp 007E  
+                start 0000                 ?_main 0070                 status 0003                 wtemp0 007E  
+        __end_of_main 0800                ??_main 0070                _TRISB0 0430                _TRISB1 0431  
+              _TRISC0 0438                _TRISB2 0432                _TRISC1 0439                _TRISB3 0433  
+              _TRISD0 0440                _TRISC2 043A                _TRISB4 0434                _TRISD1 0441  
+              _TRISC3 043B                _TRISB5 0435                _TRISD2 0442                _TRISB6 0436  
+              _TRISD3 0443                _TRISB7 0437                _TRISD4 0444                _TRISD5 0445  
+              _TRISD6 0446                _TRISD7 0447        __pcstackCOMMON 0070            __pmaintext 0701  
+end_of_initialization 06FD   start_initialization 06FD         __size_of_main 00FF  
